@@ -27,7 +27,7 @@ const coreDb = async () => {
   return connectionInstance.db(baseDb);
 };
 
-exports = {
+module.exports = {
   getDbClient,
   coreDb
 };

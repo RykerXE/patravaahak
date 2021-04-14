@@ -1,8 +1,9 @@
 const parentRouter = require('express').Router();
 
 const { healthChecker } = require('../controller/healthController');
+const { dbController } = require('../controller/controller');
 
-// Router.use()
+parentRouter.get('/db', dbController);
 parentRouter.get('/health', healthChecker);
 
 module.exports = () => parentRouter;

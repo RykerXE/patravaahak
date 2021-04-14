@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const helmet = require('helmet');
 require('dotenv').config();
 
 const routes = require('./src/routes/routes');
@@ -8,6 +9,7 @@ const noRouteHandler = require('./src/config/route');
 const { PORT = 4000 } = process.env;
 const server = express();
 
+server.use(helmet());
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
